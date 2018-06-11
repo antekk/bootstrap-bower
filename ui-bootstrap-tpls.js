@@ -4549,7 +4549,7 @@ angular.module('ui.bootstrap.modal', ['ui.bootstrap.multiMap', 'ui.bootstrap.sta
                     }, providedScope);
                   }
 
-                  ctrlInstance = ctrlInstantiate();
+                  ctrlInstance = angular.isFunction(ctrlInstantiate) ? ctrlInstantiate() : ctrlInstantiate;
 
                   if (angular.isFunction(ctrlInstance.$onInit)) {
                     ctrlInstance.$onInit();
